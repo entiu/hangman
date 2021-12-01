@@ -144,6 +144,11 @@ button[id^='key-'].used {
     opacity: .75;
 }
 
+.meaning {
+    display: block;
+    margin-bottom: 2px;
+}
+
 #restart {
     background-color: rgba(0, 0, 0, .1);
     border-radius: 8px;
