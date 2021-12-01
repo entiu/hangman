@@ -31,7 +31,8 @@ livesLeft_ui.textContent = livesTotal;
         firstLetter = word[0];
         lastLetter = word[word.length - 1];
         blanks = word_arr.filter(letter => letter !== firstLetter && letter !== lastLetter).length;
-    
+        word_ui.innerHTML = '';
+        
         for (let i = 0; i < word.length; i++) {
             let newLetter = document.createElement('h1');
             newLetter.textContent = word[i] === firstLetter || word[i] === lastLetter ? word[i] : '_';
