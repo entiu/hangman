@@ -44,7 +44,7 @@ livesLeft_ui.textContent = livesTotal;
         markLetterAsPressed(firstLetter);
         markLetterAsPressed(lastLetter);
 
-        console.log(word);
+        // console.log(word);
     }
 
     xhr.send();
