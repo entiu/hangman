@@ -160,10 +160,10 @@ function giveDefinition() {
         meanings.forEach((meaning) => {
             definition_ui.innerHTML += `<label class="part-of-speech">${meaning.partOfSpeech}</label>`;
             if (meaning.definitions.length === 1) {
-                definition_ui.innerHTML += `<span>• ${meaning.definitions[0].definition}</span>`;
+                definition_ui.innerHTML += `<span class="meaning">• ${meaning.definitions[0].definition}</span>`;
             } else {
                 meaning.definitions.forEach((definition, index) => {
-                    definition_ui.innerHTML += `<span>${index + 1}. ${definition.definition}</span>`;
+                    definition_ui.innerHTML += `<span class="meaning">${index + 1}. ${definition.definition}</span>`;
                 });
             }
         });
