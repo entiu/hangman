@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 :root {
     --clr-bg-05: #3ab138;
     --clr-bg-04: #90ba31;
@@ -17,9 +19,10 @@
 }
 
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 body {
@@ -37,43 +40,67 @@ body {
     background-color: white;
     border-radius: 16px;
     box-shadow: var(--shadow);
+    margin: 64px 0;
     padding: 16px;
 }
 
 #word {
     color: var(--clr-dark-02);
     display: flex;
+    font-family: 'Merriweather', serif;
     gap: 6px;
     justify-content: center;
     margin-bottom: 16px;
     border-bottom: 2px solid whitesmoke;
+    text-transform: uppercase;
     padding-bottom: 8px;
 }
 
-#keyboard * {
-    margin-bottom: 2px;
+#keyboard {
+    margin-bottom: 16px;
 }
 
-#keyboard [id^='row-']:first-child {
-    margin-left: 8px;
+#keyboard [id^='row-'] {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 4px;
 }
 
-#keyboard [id^='row-']:nth-child(2) {
-    margin-left: 18px;
+#row-qwe {
+    /* nothing to do here */
 }
 
-#keyboard [id^='row-']:last-child {
-    margin-left: 42px;
+#row-asd {
+    width: 90%;
+    margin-left: 10px;
+}
+
+#row-zxc {
+    width: 70%;
+    margin-left: 34px;
 }
 
 button[id^='key-'] {
     border-radius: 8px;
     border: 2px solid whitesmoke;
     cursor: pointer;
+    font-size: 125%;
     font-weight: 900;
-    width: 42px;
-    height: 42px;
+    height: 54px;
+    margin: 0;
     text-transform: uppercase;
+}
+
+#row-qwe button {
+    width: calc((100% - 9 * 4px) / 10);
+}
+
+#row-asd button {
+    width: calc((100% - 8 * 4px) / 9);
+}
+
+#row-zxc button {
+    width: calc((100% - 6 * 4px) / 7);
 }
 
 button[id^='key-'].pressed {
@@ -86,6 +113,50 @@ button[id^='key-'].used {
     cursor: not-allowed;
 }
 
+#tries {
+    color: var(--clr-dark-02);
+    border-top: 2px solid whitesmoke;
+    padding-top: 16px;
+}
+
 #sad {
     display: none;
+}
+
+#definition {
+    margin-bottom: 64px;
+}
+
+#definition h2 {
+    font-family: 'Merriweather', serif;
+}
+
+.phonetic {
+    font-weight: normal;
+    opacity: .5;
+}
+
+.part-of-speech,
+.origin {
+    display: block;
+    font-style: italic;
+    margin: 6px 0;
+    opacity: .75;
+}
+
+#restart {
+    background-color: rgba(0, 0, 0, .1);
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 16px;
+    transition: background-color 100ms ease-in;
+    width: 100%;
+}
+
+#restart:hover {
+    background-color: rgba(0, 0, 0, .15);
 }
