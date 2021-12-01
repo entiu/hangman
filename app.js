@@ -147,15 +147,18 @@ function giveDefinition() {
     } 
 
     xhr.onload = function() {
-        if (this.status !== 200) return;
+        if (this.status !== 200) {
+            definition_ui.innerHTML += `<h4>Whoopsie, no definitions found for ${word}... Maybe <a href="https://www.google.com/search?q=${word}+meaning">ask Google</a>?</h4>`;
+            return;
+        };
 
         const response = JSON.parse(this.responseText)[0];
-        const word = response.word;
+        const word_local = response.word;
         const phonetic = response.phonetic;
         const meanings = response.meanings;
         const origin = response.origin;
 
-        definition_ui.innerHTML += `<h2>${word} <span class="phonetic">[${phonetic}]</span></h2>`
+        definition_ui.innerHTML += `<h2>${word_local} <span class="phonetic">[${phonetic}]</span></h2>`
 
         meanings.forEach((meaning) => {
             definition_ui.innerHTML += `<label class="part-of-speech">${meaning.partOfSpeech}</label>`;
@@ -172,7 +175,7 @@ function giveDefinition() {
             definition_ui.innerHTML += `<label class="origin">Origin: <span>${origin}</span></h4>`;
         }
 
-        console.log(response);
+        // console.log(response);
     }
 
     xhr.send();
