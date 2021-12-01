@@ -1,0 +1,91 @@
+:root {
+    --clr-bg-05: #3ab138;
+    --clr-bg-04: #90ba31;
+    --clr-bg-03: #e6c229;
+    --clr-bg-02: #f17105;
+    --clr-bg-01: #d11149;
+
+    --clr-dark-01: #031927;
+    --clr-dark-02: #2a475a;
+    --clr-dark-03: #50758c;
+    --clr-dark-04: #9dd1f1;
+
+    --shadow:   0 1px 1px rgba(0, 0, 0, .05),
+                0 2px 2px rgba(0, 0, 0, .05),
+                0 4px 4px rgba(0, 0, 0, .05),
+                0 8px 6px rgba(0, 0, 0, .05);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+    background-color: var(--clr-bg-05);
+    height: 100%;
+    transition: background-color 300ms ease-in;
+}
+
+.container {
+    margin: 0 auto;
+    width: min(600px, 80%);
+}
+
+.board {
+    background-color: white;
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    padding: 16px;
+}
+
+#word {
+    color: var(--clr-dark-02);
+    display: flex;
+    gap: 6px;
+    justify-content: center;
+    margin-bottom: 16px;
+    border-bottom: 2px solid whitesmoke;
+    padding-bottom: 8px;
+}
+
+#keyboard * {
+    margin-bottom: 2px;
+}
+
+#keyboard [id^='row-']:first-child {
+    margin-left: 8px;
+}
+
+#keyboard [id^='row-']:nth-child(2) {
+    margin-left: 18px;
+}
+
+#keyboard [id^='row-']:last-child {
+    margin-left: 42px;
+}
+
+button[id^='key-'] {
+    border-radius: 8px;
+    border: 2px solid whitesmoke;
+    cursor: pointer;
+    font-weight: 900;
+    width: 42px;
+    height: 42px;
+    text-transform: uppercase;
+}
+
+button[id^='key-'].pressed {
+    background-color: aqua;
+}
+
+button[id^='key-'].used {
+    background-color: slategrey;
+    color: silver;
+    cursor: not-allowed;
+}
+
+#sad {
+    display: none;
+}

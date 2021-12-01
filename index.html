@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="board">
+            <div id="word"></div>
+            <div id="keyboard">
+                <div id="row-qwe">
+                    <button class="key" id="key-q">q</button>
+                    <button class="key" id="key-w">w</button>
+                    <button class="key" id="key-e">e</button>
+                    <button class="key" id="key-r">r</button>
+                    <button class="key" id="key-t">t</button>
+                    <button class="key" id="key-y">y</button>
+                    <button class="key" id="key-u">u</button>
+                    <button class="key" id="key-i">i</button>
+                    <button class="key" id="key-o">o</button>
+                    <button class="key" id="key-p">p</button>
+                </div>
+                <div id="row-asd">
+                    <button class="key" id="key-a">a</button>
+                    <button class="key" id="key-s">s</button>
+                    <button class="key" id="key-d">d</button>
+                    <button class="key" id="key-f">f</button>
+                    <button class="key" id="key-g">g</button>
+                    <button class="key" id="key-h">h</button>
+                    <button class="key" id="key-j">j</button>
+                    <button class="key" id="key-k">k</button>
+                    <button class="key" id="key-l">l</button>
+                </div>
+                <div id="row-zxc">
+                    <button class="key" id="key-z">z</button>
+                    <button class="key" id="key-x">x</button>
+                    <button class="key" id="key-c">c</button>
+                    <button class="key" id="key-v">v</button>
+                    <button class="key" id="key-b">b</button>
+                    <button class="key" id="key-n">n</button>
+                    <button class="key" id="key-m">m</button>
+                </div>
+            </div>
+        </div>
+
+        <h2 id="tries">Lives: <span id="lives-left"></span> / <span id="lives-total"></span> <span id="sad">:(</span></h2>
+    
+        <button id="restart">Restart</button>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
